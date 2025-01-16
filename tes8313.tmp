@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://enp7cpclaet1"]
+
+[ext_resource type="PackedScene" uid="uid://eboa56juni0n" path="res://texture_rect.tscn" id="1_mxc77"]
+[ext_resource type="Texture2D" uid="uid://b14pm82iwymen" path="res://icon.svg" id="2_s1lnk"]
+
+[node name="Test1" type="Node2D"]
+
+[node name="TextureRect" parent="." instance=ExtResource("1_mxc77")]
+offset_left = 412.0
+offset_top = 128.0
+offset_right = 452.0
+offset_bottom = 168.0
+
+[node name="TextureRect2" parent="." instance=ExtResource("1_mxc77")]
+offset_left = 179.0
+offset_top = 133.0
+offset_right = 219.0
+offset_bottom = 173.0
+texture = ExtResource("2_s1lnk")
