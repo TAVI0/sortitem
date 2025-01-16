@@ -1,19 +1,50 @@
-[gd_scene load_steps=3 format=3 uid="uid://enp7cpclaet1"]
+[gd_scene load_steps=4 format=3 uid="uid://enp7cpclaet1"]
 
-[ext_resource type="PackedScene" uid="uid://eboa56juni0n" path="res://texture_rect.tscn" id="1_mxc77"]
-[ext_resource type="Texture2D" uid="uid://b14pm82iwymen" path="res://icon.svg" id="2_s1lnk"]
+[ext_resource type="PackedScene" uid="uid://32uuivvmcm0" path="res://platform.tscn" id="1_paaul"]
+[ext_resource type="PackedScene" uid="uid://8xa1r7gbvy1n" path="res://set.tscn" id="2_8y7nv"]
+[ext_resource type="PackedScene" uid="uid://ornceje0cawd" path="res://item.tscn" id="2_lcpko"]
 
 [node name="Test1" type="Node2D"]
 
-[node name="TextureRect" parent="." instance=ExtResource("1_mxc77")]
-offset_left = 561.0
-offset_top = 156.0
-offset_right = 800.0
-offset_bottom = 378.0
+[node name="Object6" parent="." instance=ExtResource("2_lcpko")]
+position = Vector2(784, 460)
+type = 1
 
-[node name="TextureRect2" parent="." instance=ExtResource("1_mxc77")]
-offset_left = 179.0
-offset_top = 133.0
-offset_right = 379.0
-offset_bottom = 347.0
-texture = ExtResource("2_s1lnk")
+[node name="item2" type="Node" parent="Object6"]
+
+[node name="Object5" parent="." instance=ExtResource("2_lcpko")]
+position = Vector2(933, 462)
+type = 1
+
+[node name="item2" type="Node" parent="Object5"]
+
+[node name="Object4" parent="." instance=ExtResource("2_lcpko")]
+position = Vector2(634, 465)
+type = 1
+
+[node name="item2" type="Node" parent="Object4"]
+
+[node name="Object" parent="." instance=ExtResource("2_lcpko")]
+position = Vector2(93, 472)
+
+[node name="Object2" parent="." instance=ExtResource("2_lcpko")]
+position = Vector2(236, 473)
+
+[node name="item1" type="Node" parent="Object2"]
+
+[node name="Object3" parent="." instance=ExtResource("2_lcpko")]
+position = Vector2(375, 475)
+
+[node name="item1" type="Node" parent="Object3"]
+
+[node name="set" parent="." instance=ExtResource("2_8y7nv")]
+position = Vector2(-1, 2)
+
+[node name="Platform" parent="set" instance=ExtResource("1_paaul")]
+position = Vector2(96, 171)
+
+[node name="Platform2" parent="set" instance=ExtResource("1_paaul")]
+position = Vector2(260, 179)
+
+[node name="Platform3" parent="set" instance=ExtResource("1_paaul")]
+position = Vector2(411, 179)

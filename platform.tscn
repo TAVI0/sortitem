@@ -1,0 +1,28 @@
+[gd_scene load_steps=3 format=3 uid="uid://32uuivvmcm0"]
+
+[ext_resource type="Script" path="res://platform.gd" id="1_5pkl2"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4n5d8"]
+size = Vector2(213.525, 213.525)
+
+[node name="Platform" type="StaticBody2D" groups=["dropable"]]
+scale = Vector2(0.428329, 0.428329)
+script = ExtResource("1_5pkl2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_4n5d8")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = -107.0
+offset_top = -107.0
+offset_right = 107.0
+offset_bottom = 107.0
+
+[node name="idItem" type="Label" parent="."]
+offset_left = -109.729
+offset_top = 119.067
+offset_right = 8.27116
+offset_bottom = 281.067
+scale = Vector2(2.0133, 1.94388)
+text = "groups"
+autowrap_mode = 2
