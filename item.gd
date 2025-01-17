@@ -11,11 +11,13 @@ var id
 func _ready() -> void:
 	id = 'itemId'+str(GLOBAL.item_id)
 	add_to_group(id)
+	add_to_group(str(type))
 	GLOBAL.item_id+=1
-	$Label.set_text(id)
+	
 	pass # Replace with function body.
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
+	$Label.set_text(str(get_groups()))
 	if  draggable:
 		if Input.is_action_just_pressed("click"):
 			initialPos = global_position
@@ -37,14 +39,21 @@ func _on_area_2d_body_entered(body: Plataform) -> void:
 	if body.is_in_group('dropable') and !body.is_in_group('blocked'):
 		body.add_to_group('blocked')
 		body.add_to_group(id)
+		var setPlatform = body.get_parent() as SetPlatform
+		if setPlatform:
+			setPlatform.addToTypeList(type)
 		is_inside_dropable = true
 		body.modulate = Color(Color.BROWN, 1)
 		body_ref = body
+		
 
-func _on_area_2d_body_exited(body: Node2D) -> void:
+func _on_area_2d_body_exited(body: Plataform) -> void:
 	if body.is_in_group(id) and body.is_in_group('dropable'):
 		body.remove_from_group(id)
 		body.remove_from_group('blocked')
+		var setPlatform = body.get_parent() as SetPlatform
+		if setPlatform:
+			setPlatform.removeToTypeList(type)
 		is_inside_dropable = false
 		body.modulate = Color(Color.CRIMSON, 0.7)
 

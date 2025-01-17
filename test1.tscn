@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://enp7cpclaet1"]
 
 [ext_resource type="PackedScene" uid="uid://32uuivvmcm0" path="res://platform.tscn" id="1_paaul"]
-[ext_resource type="PackedScene" uid="uid://8xa1r7gbvy1n" path="res://set.tscn" id="2_8y7nv"]
+[ext_resource type="PackedScene" uid="uid://8xa1r7gbvy1n" path="res://setPlatform.tscn" id="2_8y7nv"]
 [ext_resource type="PackedScene" uid="uid://ornceje0cawd" path="res://item.tscn" id="2_lcpko"]
 
 [node name="Test1" type="Node2D"]
@@ -37,14 +37,20 @@ position = Vector2(375, 475)
 
 [node name="item1" type="Node" parent="Object3"]
 
-[node name="set" parent="." instance=ExtResource("2_8y7nv")]
-position = Vector2(-1, 2)
+[node name="Platform4" parent="." instance=ExtResource("1_paaul")]
+position = Vector2(496, 483)
 
-[node name="Platform" parent="set" instance=ExtResource("1_paaul")]
-position = Vector2(96, 171)
+[node name="set2" parent="." instance=ExtResource("2_8y7nv")]
+position = Vector2(1, -2)
 
-[node name="Platform2" parent="set" instance=ExtResource("1_paaul")]
-position = Vector2(260, 179)
+[node name="Platform" parent="set2" instance=ExtResource("1_paaul")]
+position = Vector2(85, 183)
+scale = Vector2(0.428329, 0.428329)
 
-[node name="Platform3" parent="set" instance=ExtResource("1_paaul")]
-position = Vector2(411, 179)
+[node name="Platform2" parent="set2" instance=ExtResource("1_paaul")]
+position = Vector2(249, 191)
+scale = Vector2(0.428329, 0.428329)
+
+[node name="Platform3" parent="set2" instance=ExtResource("1_paaul")]
+position = Vector2(400, 191)
+scale = Vector2(0.428329, 0.428329)
