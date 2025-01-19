@@ -1,56 +1,68 @@
-[gd_scene load_steps=4 format=3 uid="uid://enp7cpclaet1"]
+[gd_scene load_steps=6 format=3 uid="uid://enp7cpclaet1"]
 
 [ext_resource type="PackedScene" uid="uid://32uuivvmcm0" path="res://platform.tscn" id="1_paaul"]
+[ext_resource type="Script" path="res://test_1.gd" id="1_ryaja"]
 [ext_resource type="PackedScene" uid="uid://8xa1r7gbvy1n" path="res://setPlatform.tscn" id="2_8y7nv"]
 [ext_resource type="PackedScene" uid="uid://ornceje0cawd" path="res://item.tscn" id="2_lcpko"]
+[ext_resource type="PackedScene" uid="uid://c8oyxtnra3pwt" path="res://setTypes.tscn" id="4_djona"]
 
 [node name="Test1" type="Node2D"]
-
-[node name="Object6" parent="." instance=ExtResource("2_lcpko")]
-position = Vector2(784, 460)
-type = 1
-
-[node name="item2" type="Node" parent="Object6"]
-
-[node name="Object5" parent="." instance=ExtResource("2_lcpko")]
-position = Vector2(933, 462)
-type = 1
-
-[node name="item2" type="Node" parent="Object5"]
-
-[node name="Object4" parent="." instance=ExtResource("2_lcpko")]
-position = Vector2(634, 465)
-type = 1
-
-[node name="item2" type="Node" parent="Object4"]
-
-[node name="Object" parent="." instance=ExtResource("2_lcpko")]
-position = Vector2(93, 472)
-
-[node name="Object2" parent="." instance=ExtResource("2_lcpko")]
-position = Vector2(236, 473)
-
-[node name="item1" type="Node" parent="Object2"]
-
-[node name="Object3" parent="." instance=ExtResource("2_lcpko")]
-position = Vector2(375, 475)
-
-[node name="item1" type="Node" parent="Object3"]
+script = ExtResource("1_ryaja")
 
 [node name="Platform4" parent="." instance=ExtResource("1_paaul")]
 position = Vector2(496, 483)
 
 [node name="set2" parent="." instance=ExtResource("2_8y7nv")]
-position = Vector2(1, -2)
 
 [node name="Platform" parent="set2" instance=ExtResource("1_paaul")]
 position = Vector2(85, 183)
-scale = Vector2(0.428329, 0.428329)
 
 [node name="Platform2" parent="set2" instance=ExtResource("1_paaul")]
 position = Vector2(249, 191)
-scale = Vector2(0.428329, 0.428329)
 
 [node name="Platform3" parent="set2" instance=ExtResource("1_paaul")]
 position = Vector2(400, 191)
-scale = Vector2(0.428329, 0.428329)
+
+[node name="SetTypes" parent="." instance=ExtResource("4_djona")]
+
+[node name="Item" parent="SetTypes" instance=ExtResource("2_lcpko")]
+position = Vector2(81, 442)
+
+[node name="Item2" parent="SetTypes" instance=ExtResource("2_lcpko")]
+position = Vector2(212, 449)
+
+[node name="Item3" parent="SetTypes" instance=ExtResource("2_lcpko")]
+position = Vector2(355, 449)
+
+[node name="SetTypes2" parent="." instance=ExtResource("4_djona")]
+typeItem = 1
+
+[node name="Item" parent="SetTypes2" instance=ExtResource("2_lcpko")]
+position = Vector2(750, 467)
+
+[node name="Item2" parent="SetTypes2" instance=ExtResource("2_lcpko")]
+position = Vector2(906, 468)
+
+[node name="Item3" parent="SetTypes2" instance=ExtResource("2_lcpko")]
+position = Vector2(1045, 472)
+
+[node name="txtScore" type="Label" parent="."]
+offset_left = 168.0
+offset_top = 8.0
+offset_right = 219.0
+offset_bottom = 31.0
+text = "SCORE:"
+
+[node name="is_dragging" type="Label" parent="."]
+offset_left = 462.0
+offset_top = 11.0
+offset_right = 552.0
+offset_bottom = 34.0
+text = "IS_DRAGGING"
+
+[node name="numScore" type="Label" parent="."]
+offset_left = 231.0
+offset_top = 10.0
+offset_right = 321.0
+offset_bottom = 33.0
+text = "NUMSCORE"

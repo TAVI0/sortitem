@@ -6,12 +6,14 @@ var body_ref
 var offset:  Vector2
 var initialPos: Vector2
 var id
-@export var type = 0
+var type: int
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	var setTypes = get_parent() as SetTypes
+	if setTypes:
+		type =  setTypes.typeItem
 	id = 'itemId'+str(GLOBAL.item_id)
 	add_to_group(id)
-	add_to_group(str(type))
 	GLOBAL.item_id+=1
 	
 	pass # Replace with function body.
