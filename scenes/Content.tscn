@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://c3rln8w11of2n"]
+
+[ext_resource type="Script" path="res://scripts/content.gd" id="1_rh32k"]
+
+[node name="Content" type="Node2D"]
+script = ExtResource("1_rh32k")
+decoration_sprite_folder = "res://assets/stars"
+decoration_count = 6
