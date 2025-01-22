@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=3 uid="uid://c7xqa665h8a7y"]
+
+[ext_resource type="Script" path="res://scripts/drawer.gd" id="1_gv1k0"]
+[ext_resource type="Texture2D" uid="uid://sxjrbjkh0gjj" path="res://assets/Drawer.png" id="2_hushd"]
+[ext_resource type="PackedScene" uid="uid://c3rln8w11of2n" path="res://scenes/Content.tscn" id="3_p0xjn"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_54f56"]
+size = Vector2(25, 27)
+
+[node name="Drawer" type="Area2D"]
+scale = Vector2(0.734585, 0.734585)
+script = ExtResource("1_gv1k0")
+left_limit = 400
+right_limit = 1090
+decoration_sprite_folder = "res://assets/stars"
+separation = 110
+
+[node name="Handle" type="CollisionShape2D" parent="."]
+position = Vector2(35.792, 98.6387)
+scale = Vector2(1.89077, 1.89077)
+shape = SubResource("RectangleShape2D_54f56")
+
+[node name="Sprite" type="Sprite2D" parent="."]
+position = Vector2(500, 100)
+texture = ExtResource("2_hushd")
+
+[node name="Content" parent="." instance=ExtResource("3_p0xjn")]
+position = Vector2(149.745, 99.3759)
+
+[connection signal="input_event" from="." to="." method="_on_input_event"]

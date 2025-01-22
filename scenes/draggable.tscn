@@ -7,6 +7,7 @@
 size = Vector2(122, 118)
 
 [node name="Draggable" type="Area2D"]
+scale = Vector2(0.459167, 0.459167)
 collision_mask = 2
 script = ExtResource("1_pdm50")
 

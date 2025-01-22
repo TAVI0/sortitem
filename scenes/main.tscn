@@ -1,12 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://c5ywwhigoeygo"]
+[gd_scene load_steps=2 format=3 uid="uid://c5ywwhigoeygo"]
 
-[ext_resource type="PackedScene" uid="uid://ddahnfrq7cqmr" path="res://scenes/draggable.tscn" id="1_keqyt"]
-[ext_resource type="PackedScene" uid="uid://c3rln8w11of2n" path="res://scenes/Content.tscn" id="2_aniq6"]
+[ext_resource type="PackedScene" uid="uid://c7xqa665h8a7y" path="res://scenes/Drawer.tscn" id="1_rnsry"]
 
 [node name="Main" type="Node2D"]
 
-[node name="Draggable" parent="." instance=ExtResource("1_keqyt")]
-position = Vector2(358, 431)
-
-[node name="Content" parent="." instance=ExtResource("2_aniq6")]
-position = Vector2(425, 130)
+[node name="Drawer" parent="." instance=ExtResource("1_rnsry")]
+position = Vector2(419, -9)

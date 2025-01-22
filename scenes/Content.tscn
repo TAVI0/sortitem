@@ -3,6 +3,6 @@
 [ext_resource type="Script" path="res://scripts/content.gd" id="1_rh32k"]
 
 [node name="Content" type="Node2D"]
+scale = Vector2(0.425, 0.425)
 script = ExtResource("1_rh32k")
 decoration_sprite_folder = "res://assets/stars"
-decoration_count = 6

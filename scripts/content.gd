@@ -11,7 +11,7 @@ const DRAGGABLE = preload("res://scenes/draggable.tscn")
 @export var decoration_scale = Vector2(1.0, 1.0)
 @export_flags_3d_physics var decoration_collisions = 2
 
-signal conten_successfully_dropped(draggable: Draggable, area: Area2D)
+signal content_successfully_dropped(draggable: Draggable, area: Area2D)
 
 func initialize():
 	var textures_from_folder: Array = load_textures_from_folder(decoration_sprite_folder)
@@ -42,7 +42,7 @@ func _on_draggable_dropped(draggable: Draggable, overlapping_areas: Array[Area2D
 	instantiate_decoration(draggable.initial_position, draggable.texture)
 	if overlapping_areas:
 		draggable.disconnect("dropped", _on_draggable_dropped)
-		conten_successfully_dropped.emit(draggable,overlapping_areas[0])
+		content_successfully_dropped.emit(draggable,overlapping_areas[0])
 	pass
 
 func load_textures_from_folder(folder_path: String) -> Array:
