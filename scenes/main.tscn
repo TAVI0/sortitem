@@ -1,8 +1,118 @@
-[gd_scene load_steps=2 format=3 uid="uid://c5ywwhigoeygo"]
+[gd_scene load_steps=8 format=3 uid="uid://c5ywwhigoeygo"]
 
+[ext_resource type="Texture2D" uid="uid://b2yvqyk7ejnp4" path="res://assets/Room.png" id="1_ad8k0"]
+[ext_resource type="Script" path="res://scripts/main.gd" id="1_cl0kx"]
 [ext_resource type="PackedScene" uid="uid://c7xqa665h8a7y" path="res://scenes/Drawer.tscn" id="1_rnsry"]
+[ext_resource type="Texture2D" uid="uid://db7r2oy1k50qy" path="res://assets/Christmas_Tree.png" id="3_bkxlj"]
+[ext_resource type="Script" path="res://scripts/christmas_tree.gd" id="4_4qnpt"]
+[ext_resource type="Script" path="res://scripts/tree_tip.gd" id="5_druou"]
+[ext_resource type="Script" path="res://scripts/ginger_bread.gd" id="6_73ww6"]
 
 [node name="Main" type="Node2D"]
+script = ExtResource("1_cl0kx")
+metadata/_edit_vertical_guides_ = [1333.0, -695.0]
+metadata/_edit_horizontal_guides_ = [-31.0]
 
-[node name="Drawer" parent="." instance=ExtResource("1_rnsry")]
-position = Vector2(419, -9)
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(576, 324)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("1_ad8k0")
+
+[node name="Tree" type="Node2D" parent="."]
+scale = Vector2(0.56, 0.56)
+
+[node name="TreeSprite" type="Sprite2D" parent="Tree"]
+position = Vector2(382.143, 576.786)
+texture = ExtResource("3_bkxlj")
+
+[node name="ChristmasTree" type="Area2D" parent="Tree"]
+collision_layer = 4
+script = ExtResource("4_4qnpt")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Tree/ChristmasTree"]
+position = Vector2(382.143, 576.786)
+polygon = PackedVector2Array(1.10001, -415, -33.1, -494.5, -53.5, -494.5, -53.5, -492.5, -55.5, -428, -73.5, -392.9, -73.5, -392.1, -169.4, -306.5, -173.5, -306.5, -178.3, -293.4, -157.7, -276.1, -161.6, -267.7, -234.2, -223.5, -243.2, -223.5, -241.5, -198.8, -241.5, -187.7, -258.2, -182.5, -264.7, -182.5, -273.5, -156.1, -273.5, -145.6, -258.2, -142, -263.5, -124, -263.5, -114.9, -270.4, -110.5, -283.5, -110.5, -278.5, -83.8, -278.5, -70.8, -222.3, -74.7, -301.1, -11.5, -304.3, -11.5, -310.1, -1.39999, -299.5, 16.2, -299.5, 27.8, -263.6, 17.3, -272.9, 34.8, -340.1, 58.5, -351.8, 58.5, -345.5, 88.5, -345.5, 99.7, -274.8, 91.7, -272.7, 93.4, -335.1, 127.5, -350.2, 127.5, -335.5, 154.9, -335.5, 165.2, -303.8, 160.2, -298.4, 173.4, -325.1, 195.5, -338, 195.5, -326.2, 221.7, -354.5, 236.3, -354.5, 257.5, -337.1, 257.5, -338.5, 284.2, -338.5, 294.8, -309.7, 304, -354.5, 363.8, -354.5, 394.2, -332.5, 405.6, -332.5, 416.1, -314.1, 407.6, -305.5, 419.6, -305.5, 427.3, -240.6, 428.4, -235.5, 450.8, -235.5, 465.7, -194.5, 447.9, -200.7, 460.5, -179.7, 460.5, -144.7, 439.5, -52.2, 426.6, -52.5, 428.4, -52.5, 445.6, -15.8, 430, 51.5, 475.8, 51.5, 479.1, 66.2, 483.2, 93.9, 436.6, 157.8, 416.7, 203.2, 428.5, 219.8, 428.5, 220.7, 414.6, 269.9, 420.5, 279.8, 420.5, 293.9, 405.3, 339.7, 412.5, 349.1, 412.5, 354.5, 403.7, 354.5, 378.3, 292.9, 330.4, 302.5, 330.9, 302.5, 313.6, 291, 301.4, 291.7, 301.5, 296.6, 301.5, 342.5, 281, 342.5, 266, 305.8, 255.3, 291, 229.5, 310.7, 229.5, 299.6, 207.5, 314.2, 206.5, 322, 206.5, 326.2, 192, 288.6, 168.4, 316.5, 147.5, 316.5, 131.8, 224.4, 93.8, 236.5, 77.8, 236.5, 69.4, 207.5, 26.4, 220.2, 25.5, 227, 25.5, 232.3, 13.6, 222.9, 3.20001, 236.5, -22, 236.5, -31.5, 179.2, -62.1, 183.5, -78.2, 183.5, -86.7, 149.3, -103.5, 161.6, -103.5, 157.6, -124.2, 164.3, -122.5, 174.2, -122.5, 194.5, -156.8, 194.5, -168.6, 117.1, -208.7, 150.5, -241.3, 150.5, -252.6, 77.3, -305.7, 90.5, -314, 90.5, -327.1, 48.8, -352.9, 55.5, -357, 55.5, -372.4)
+
+[node name="Content" type="Node2D" parent="Tree/ChristmasTree"]
+
+[node name="TreeTip" type="Area2D" parent="Tree"]
+collision_layer = 2
+script = ExtResource("5_druou")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Tree/TreeTip"]
+position = Vector2(382.143, 576.786)
+polygon = PackedVector2Array(1.10001, -415, -33.1, -494.5, -53.5, -494.5, -53.5, -492.5, -55.5, -428, -73.5, -392.9, -73.5, -392.1, -169.4, -306.5, -173.5, -306.5, -178.3, -293.4, -157.7, -276.1, -161.6, -267.7, -234.2, -223.5, -243.2, -223.5, -241.5, -198.8, -241.5, -187.7, -258.2, -182.5, -264.7, -182.5, -273.5, -156.1, -273.5, -145.6, -258.2, -142, -263.5, -124, -263.5, -114.9, -270.4, -110.5, -283.5, -110.5, -278.5, -83.8, -278.5, -70.8, -222.3, -74.7, -301.1, -11.5, -304.3, -11.5, -310.1, -1.39999, -299.5, 16.2, -299.5, 27.8, -263.6, 17.3, -272.9, 34.8, -340.1, 58.5, -351.8, 58.5, -345.5, 88.5, -345.5, 99.7, -274.8, 91.7, -272.7, 93.4, -335.1, 127.5, -350.2, 127.5, -335.5, 154.9, -335.5, 165.2, -303.8, 160.2, -298.4, 173.4, -325.1, 195.5, -338, 195.5, -326.2, 221.7, -354.5, 236.3, -354.5, 257.5, -337.1, 257.5, -338.5, 284.2, -338.5, 294.8, -309.7, 304, -354.5, 363.8, -354.5, 394.2, -332.5, 405.6, -332.5, 416.1, -314.1, 407.6, -305.5, 419.6, -305.5, 427.3, -240.6, 428.4, -235.5, 450.8, -235.5, 465.7, -194.5, 447.9, -200.7, 460.5, -179.7, 460.5, -144.7, 439.5, -52.2, 426.6, -52.5, 428.4, -52.5, 445.6, -15.8, 430, 51.5, 475.8, 51.5, 479.1, 66.2, 483.2, 93.9, 436.6, 157.8, 416.7, 203.2, 428.5, 219.8, 428.5, 220.7, 414.6, 269.9, 420.5, 279.8, 420.5, 293.9, 405.3, 339.7, 412.5, 349.1, 412.5, 354.5, 403.7, 354.5, 378.3, 292.9, 330.4, 302.5, 330.9, 302.5, 313.6, 291, 301.4, 291.7, 301.5, 296.6, 301.5, 342.5, 281, 342.5, 266, 305.8, 255.3, 291, 229.5, 310.7, 229.5, 299.6, 207.5, 314.2, 206.5, 322, 206.5, 326.2, 192, 288.6, 168.4, 316.5, 147.5, 316.5, 131.8, 224.4, 93.8, 236.5, 77.8, 236.5, 69.4, 207.5, 26.4, 220.2, 25.5, 227, 25.5, 232.3, 13.6, 222.9, 3.20001, 236.5, -22, 236.5, -31.5, 179.2, -62.1, 183.5, -78.2, 183.5, -86.7, 149.3, -103.5, 161.6, -103.5, 157.6, -124.2, 164.3, -122.5, 174.2, -122.5, 194.5, -156.8, 194.5, -168.6, 117.1, -208.7, 150.5, -241.3, 150.5, -252.6, 77.3, -305.7, 90.5, -314, 90.5, -327.1, 48.8, -352.9, 55.5, -357, 55.5, -372.4)
+
+[node name="Content" type="Node2D" parent="Tree/TreeTip"]
+
+[node name="Marker2D" type="Marker2D" parent="Tree/TreeTip"]
+position = Vector2(351.786, 91.0715)
+gizmo_extents = 70.0
+
+[node name="GingerBread" type="Area2D" parent="Tree"]
+collision_layer = 8
+script = ExtResource("6_73ww6")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Tree/GingerBread"]
+position = Vector2(382.143, 576.786)
+polygon = PackedVector2Array(1.10001, -415, -33.1, -494.5, -53.5, -494.5, -53.5, -492.5, -55.5, -428, -73.5, -392.9, -73.5, -392.1, -169.4, -306.5, -173.5, -306.5, -178.3, -293.4, -157.7, -276.1, -161.6, -267.7, -234.2, -223.5, -243.2, -223.5, -241.5, -198.8, -241.5, -187.7, -258.2, -182.5, -264.7, -182.5, -273.5, -156.1, -273.5, -145.6, -258.2, -142, -263.5, -124, -263.5, -114.9, -270.4, -110.5, -283.5, -110.5, -278.5, -83.8, -278.5, -70.8, -222.3, -74.7, -301.1, -11.5, -304.3, -11.5, -310.1, -1.39999, -299.5, 16.2, -299.5, 27.8, -263.6, 17.3, -272.9, 34.8, -340.1, 58.5, -351.8, 58.5, -345.5, 88.5, -345.5, 99.7, -274.8, 91.7, -272.7, 93.4, -335.1, 127.5, -350.2, 127.5, -335.5, 154.9, -335.5, 165.2, -303.8, 160.2, -298.4, 173.4, -325.1, 195.5, -338, 195.5, -326.2, 221.7, -354.5, 236.3, -354.5, 257.5, -337.1, 257.5, -338.5, 284.2, -338.5, 294.8, -309.7, 304, -354.5, 363.8, -354.5, 394.2, -332.5, 405.6, -332.5, 416.1, -314.1, 407.6, -305.5, 419.6, -305.5, 427.3, -240.6, 428.4, -235.5, 450.8, -235.5, 465.7, -194.5, 447.9, -200.7, 460.5, -179.7, 460.5, -144.7, 439.5, -52.2, 426.6, -52.5, 428.4, -52.5, 445.6, -15.8, 430, 51.5, 475.8, 51.5, 479.1, 66.2, 483.2, 93.9, 436.6, 157.8, 416.7, 203.2, 428.5, 219.8, 428.5, 220.7, 414.6, 269.9, 420.5, 279.8, 420.5, 293.9, 405.3, 339.7, 412.5, 349.1, 412.5, 354.5, 403.7, 354.5, 378.3, 292.9, 330.4, 302.5, 330.9, 302.5, 313.6, 291, 301.4, 291.7, 301.5, 296.6, 301.5, 342.5, 281, 342.5, 266, 305.8, 255.3, 291, 229.5, 310.7, 229.5, 299.6, 207.5, 314.2, 206.5, 322, 206.5, 326.2, 192, 288.6, 168.4, 316.5, 147.5, 316.5, 131.8, 224.4, 93.8, 236.5, 77.8, 236.5, 69.4, 207.5, 26.4, 220.2, 25.5, 227, 25.5, 232.3, 13.6, 222.9, 3.20001, 236.5, -22, 236.5, -31.5, 179.2, -62.1, 183.5, -78.2, 183.5, -86.7, 149.3, -103.5, 161.6, -103.5, 157.6, -124.2, 164.3, -122.5, 174.2, -122.5, 194.5, -156.8, 194.5, -168.6, 117.1, -208.7, 150.5, -241.3, 150.5, -252.6, 77.3, -305.7, 90.5, -314, 90.5, -327.1, 48.8, -352.9, 55.5, -357, 55.5, -372.4)
+
+[node name="Markers" type="Node2D" parent="Tree/GingerBread"]
+
+[node name="Marker2D3" type="Marker2D" parent="Tree/GingerBread/Markers"]
+position = Vector2(234.286, 741.429)
+gizmo_extents = 70.0
+
+[node name="Marker2D4" type="Marker2D" parent="Tree/GingerBread/Markers"]
+position = Vector2(305.714, 741.429)
+gizmo_extents = 70.0
+
+[node name="Marker2D" type="Marker2D" parent="Tree/GingerBread/Markers"]
+position = Vector2(83.9286, 741.071)
+gizmo_extents = 70.0
+
+[node name="Marker2D2" type="Marker2D" parent="Tree/GingerBread/Markers"]
+position = Vector2(155.357, 741.071)
+gizmo_extents = 70.0
+
+[node name="Marker2D5" type="Marker2D" parent="Tree/GingerBread/Markers"]
+position = Vector2(384.286, 741.429)
+gizmo_extents = 70.0
+
+[node name="Marker2D6" type="Marker2D" parent="Tree/GingerBread/Markers"]
+position = Vector2(455.714, 741.429)
+gizmo_extents = 70.0
+
+[node name="Marker2D7" type="Marker2D" parent="Tree/GingerBread/Markers"]
+position = Vector2(532.5, 741.429)
+gizmo_extents = 70.0
+
+[node name="Marker2D8" type="Marker2D" parent="Tree/GingerBread/Markers"]
+position = Vector2(603.929, 741.429)
+gizmo_extents = 70.0
+
+[node name="Marker2D9" type="Marker2D" parent="Tree/GingerBread/Markers"]
+position = Vector2(680.357, 741.071)
+gizmo_extents = 70.0
+
+[node name="Content" type="Node2D" parent="Tree/GingerBread"]
+
+[node name="Drawers" type="Node2D" parent="."]
+
+[node name="Stars" parent="Drawers" instance=ExtResource("1_rnsry")]
+position = Vector2(418, -9)
+left_limit = 425
+
+[node name="Baubles" parent="Drawers" instance=ExtResource("1_rnsry")]
+position = Vector2(418, 168)
+left_limit = 425
+decoration_sprite_folder = "res://assets/baubles"
+decoration_count = 9
+decoration_collisions = 4
+separation = 70
+
+[node name="gingers" parent="Drawers" instance=ExtResource("1_rnsry")]
+position = Vector2(416, 339)
+left_limit = 425
+decoration_sprite_folder = "res://assets/ginger"
+decoration_collisions = 8

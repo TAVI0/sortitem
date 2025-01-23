@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="sortitem"
-run/main_scene="res://scenes/Drawer.tscn"
+run/main_scene="res://scenes/main.tscn"
 config/features=PackedStringArray("4.3", "Mobile")
 config/icon="res://icon.svg"
 
@@ -29,6 +29,9 @@ click={
 
 [layer_names]
 
+2d_physics/layer_2="star"
 3d_physics/layer_2="tree"
+2d_physics/layer_3="baubles"
 3d_physics/layer_3="tip"
+2d_physics/layer_4="row"
 3d_physics/layer_4="row"
